@@ -1,3 +1,4 @@
+import {useState} from 'react'
 
 import ButtonSubmit from '../form/ButtonSubmit';
 import InputForm from '../form/InputForm';
@@ -9,6 +10,21 @@ interface IProjectForm {
 }
 
 function ProjectForm(props: IProjectForm) {
+
+    const [categories, setCategories] = useState([])
+
+    fetch("http://localhost:5000/categories", {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then((resp) => resp.json())
+    .then((data) => {
+        setCategories(data)
+    })
+    .catch((err) => console.log(err))
+
     return (
         <form className={styles.form}>
             <InputForm 
@@ -21,7 +37,7 @@ function ProjectForm(props: IProjectForm) {
                 text="Orçamento do projeto"
                 name="budget"
                 placeholder="Insira o orçamento total"/>
-            <Select name="category_id" text="Selecione a categoria"/>
+            <Select name="category_id" text="Selecione a categoria" options={categories}/>
             <ButtonSubmit text={props.btnText}/>
         </form>
     )

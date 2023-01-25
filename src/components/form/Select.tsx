@@ -1,3 +1,4 @@
+import { urlToHttpOptions } from 'url'
 import styles from './Select.module.css'
 
 interface ISelect {
@@ -18,6 +19,9 @@ function Select(props: ISelect) {
                 onChange={props.handleOnChange}
                 value={props.value}>
                 <option>Selecione uma opção</option>
+                {props.options.map((option: any) => (
+                    <option value={option.id} key={option.id}>{option.name}</option>
+                ))}
             </select>
         </div>
 
