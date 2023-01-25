@@ -1,15 +1,15 @@
-import styles from './Input.module.css'
+import styles from './InputForm.module.css'
 
-interface IInput {
+interface IInputForm {
     type: any,
     text: string,
     name: string,
     placeholder: string,
-    handleOnChange: any,
-    value: any
+    handleOnChange?: any,
+    value?: any
 }
 
-function Input(props: IInput) {
+function InputForm(props: IInputForm) {
     return (
         <div className={styles.form_control}>
             <label htmlFor={props.name}> {props.text}:</label>
@@ -25,4 +25,4 @@ function Input(props: IInput) {
     )
 }
 
-export default Input
+export default InputForm
