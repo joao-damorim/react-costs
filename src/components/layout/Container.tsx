@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 
 
 interface IContainer {
-    customClass: any,
+    customClass?: any,
     children: ReactNode
 }
 
