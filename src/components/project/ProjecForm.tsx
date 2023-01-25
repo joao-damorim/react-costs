@@ -4,7 +4,11 @@ import InputForm from '../form/InputForm';
 import Select from '../form/Select';
 import styles from './ProjectForm.module.css';
 
-function ProjectForm() {
+interface IProjectForm {
+    btnText: string;
+}
+
+function ProjectForm(props: IProjectForm) {
     return (
         <form className={styles.form}>
             <InputForm 
@@ -18,7 +22,7 @@ function ProjectForm() {
                 name="budget"
                 placeholder="Insira o orçamento total"/>
             <Select name="category_id" text="Selecione a categoria"/>
-            <ButtonSubmit text=""/>
+            <ButtonSubmit text={props.btnText}/>
         </form>
     )
 }
