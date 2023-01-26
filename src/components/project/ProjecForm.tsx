@@ -6,13 +6,16 @@ import Select from '../form/Select';
 import styles from './ProjectForm.module.css';
 
 interface IProjectForm {
-    btnText: string;
+    btnText: string,
+    handleSubmit: any,
+    projectData: any
 }
 
 function ProjectForm(props: IProjectForm) {
 
     const [categories, setCategories] = useState([])
-
+    const [project, setProject] = useState(props.projectData || {})
+    
     useEffect(() => {
         fetch("http://localhost:5000/categories", {
         method: "GET",
@@ -27,8 +30,18 @@ function ProjectForm(props: IProjectForm) {
         .catch((err) => console.log(err))
         }, [])
 
+    const submit = (e: any) => {
+        e.preventDefault()
+        props.handleSubmit(project)
+    }
+
+    function handleChange(e: any) {
+        setProject({...project, [e.target.name]: e.target.value})
+        console.log(project)
+    }
+
     return (
-        <form className={styles.form}>
+        <form onSubmit={submit} className={styles.form}>
             <InputForm 
                 type="text" 
                 text="Nome do projeto"
