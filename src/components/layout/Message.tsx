@@ -1,6 +1,5 @@
 import styles from './Message.module.css'
 import { useState, useEffect } from 'react'
-import { flattenDiagnosticMessageText } from 'typescript'
 interface IMessage {
     msg: string,
     type: string
