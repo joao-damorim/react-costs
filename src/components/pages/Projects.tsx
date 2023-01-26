@@ -9,7 +9,7 @@ import { useState, useEffect } from "react"
 
 function Projects() {
 
-    const [projects, setProjects] = useState([])
+    const [projects, setProjects] = useState<any[]>([])
 
     const location = useLocation()
     let message = ''
@@ -39,7 +39,14 @@ function Projects() {
             </div>
             {message && <Message msg={message} type="success" />}
             <Container customClass="start">
-                <p>Projetos...</p>
+                {projects.length > 0 &&
+                    projects.map((project) => <ProjectCard 
+                    id={project.id}
+                    name={project.name}
+                    budget={project.budget}
+                    category={project.category ? project.category.name : 'Categoria Indefinida'}
+                    key={project.id}
+                     />)}
             </Container>
         </div>
     )
