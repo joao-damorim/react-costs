@@ -20,6 +20,7 @@ function Projects() {
     let message = ''
     if(location.state) {
         message = location.state
+        console.log(message)
     }
 
     useEffect(() => {

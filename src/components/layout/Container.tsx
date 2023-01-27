@@ -4,7 +4,7 @@ import { ReactNode } from 'react'
 
 interface IContainer {
     customClass?: any,
-    children: ReactNode
+    children?: ReactNode
 }
 
 function Container(props: IContainer) {
