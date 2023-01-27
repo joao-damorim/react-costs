@@ -99,8 +99,27 @@ function Project() {
 
     }
 
-    function removeService() {
-        
+    function removeService(id: any, cost: any) {
+        const servicesUpdated = project.services.filter((service: any) => service.id !== id)
+
+        const projectUpdated = project
+
+        projectUpdated.services = servicesUpdated
+        projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
+
+        fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(projectUpdated)
+        })
+        .then(resp => resp.json())
+        .then((data) => {
+            setProject(projectUpdated)
+            setServices(servicesUpdated)
+            setMessage("Serviço removido com sucesso!")
+        }).catch(err => console.log(err))
     }
 
     function toggleProjectForm() {
@@ -160,8 +179,8 @@ function Project() {
                         </div>
                         <h2>Serviços</h2>
                         <Container customClass="start">
-                            {services.length > 0 && 
-                            services.map((service: any) => {
+                            {services.length > 0 &&
+                            services.map((service: any) => (
                                 <ServiceCard 
                                     id={service.id}
                                     name={service.name}
@@ -170,9 +189,7 @@ function Project() {
                                     key={service.id}
                                     handleRemove={removeService}
                                     />
-                            })
-
-                            }
+                            ))}
                             {services.length === 0 && <p>Não há serviços cadastrados.</p>}
                         </Container>
                     </Container>

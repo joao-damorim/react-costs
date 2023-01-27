@@ -7,7 +7,7 @@
         "id": "2",
         "name": "Desenvolvimento"
       },
-      "cost": 256,
+      "cost": 839,
       "services": [
         {
           "name": "Obra",
@@ -20,9 +20,56 @@
           "cost": "233",
           "description": "live111",
           "id": "45ad8950-89f8-4804-82ba-443fd7765ece"
+        },
+        {
+          "name": "China",
+          "cost": "50",
+          "description": "Teste João",
+          "id": "90dbe6cf-e27c-4019-b7f5-813591e1cb07"
+        },
+        {
+          "name": "China",
+          "cost": "50",
+          "description": "Teste João",
+          "id": "90dbe6cf-e27c-4019-b7f5-813591e1cb07"
+        },
+        {
+          "name": "China",
+          "cost": "50",
+          "description": "Teste João",
+          "id": "d654927a-002b-49e9-a248-1abe9a79a558"
+        },
+        {
+          "name": "China",
+          "cost": "50",
+          "description": "Teste João",
+          "id": "b77a2fc3-0c2c-4dba-859b-118b86d13234"
+        },
+        {
+          "name": "China",
+          "cost": "50",
+          "description": "Teste João",
+          "id": "f05c69a5-f30d-477d-ad95-5d237f521e11"
+        },
+        {
+          "name": "Oioi",
+          "cost": "333",
+          "description": "yy  ",
+          "id": "0bab1cdf-a83a-4209-87fe-77dd23b3276a"
         }
       ],
       "id": 1
+    },
+    {
+      "name": "China",
+      "budget": "5000",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 2
     }
   ],
   "categories": [

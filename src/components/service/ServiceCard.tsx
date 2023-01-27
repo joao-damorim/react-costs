@@ -10,8 +10,10 @@ interface IServiceCard {
 }
 
 function ServiceCard(props: IServiceCard) {
-    
-    const remove = (e) => {}
+    const remove = (e: any) => {
+        e.preventDefault()
+        props.handleRemove(props.id, props.cost)
+    }
 
     return (
         <div className={styles.project_card}>
