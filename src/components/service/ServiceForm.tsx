@@ -13,12 +13,17 @@ interface IServiceForm {
 
 function ServiceForm(props: IServiceForm) {
 
-    function submit() {
+    const [service, setService] = useState({})
 
+    function submit(e: any) {
+        e.preventDefault()
+        console.log(props)
+        props.projectData.services.push(service)
+        props.handleSubmit(props.projectData)
     }
 
     function handleChange(e: any) {
-        
+        setService({...service, [e.target.name]: e.target.value})
     }
 
     return (

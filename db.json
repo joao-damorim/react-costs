@@ -1,59 +1,28 @@
 {
   "projects": [
     {
-      "name": "Oi",
+      "name": "TIm",
       "budget": "1000",
       "category": {
         "id": "2",
         "name": "Desenvolvimento"
       },
-      "cost": 0,
-      "services": 0,
-      "id": 2
-    },
-    {
-      "name": "Pppp",
-      "budget": "10",
-      "category": {
-        "id": "1",
-        "name": "Infra"
-      },
-      "cost": 0,
-      "services": 0,
-      "id": 7
-    },
-    {
-      "name": "Tim",
-      "budget": "5334444",
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "cost": 0,
-      "services": 0,
-      "id": 8
-    },
-    {
-      "name": "Tatodesk",
-      "budget": "300000",
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "cost": 0,
-      "services": 0,
-      "id": 9
-    },
-    {
-      "name": "Claro",
-      "budget": "50000",
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "cost": 0,
-      "services": 0,
-      "id": 10
+      "cost": 256,
+      "services": [
+        {
+          "name": "Obra",
+          "cost": "23",
+          "description": "live",
+          "id": "726d11e2-7dbe-4e94-a712-ed6cbcae2094"
+        },
+        {
+          "name": "Obra11",
+          "cost": "233",
+          "description": "live111",
+          "id": "45ad8950-89f8-4804-82ba-443fd7765ece"
+        }
+      ],
+      "id": 1
     }
   ],
   "categories": [
